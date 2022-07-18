@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dim"
+    tools:context=".WelcomeActivity">
+
+    <include
+        android:id="@+id/default_toolbar"
+        layout="@layout/default_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hello_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="50dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="See what's
+         happening in the world right now."
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.397" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continue_with_google"
+        android:layout_width="319dp"
+        android:layout_height="53dp"
+        android:padding="10dp"
+        android:background="@drawable/round_corner_button"
+        android:backgroundTint="@color/white"
+        android:text="Continue with Google"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hello_text" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/create_an_account"
+        app:layout_constraintTop_toBottomOf="@+id/continue_with_google" />
+    />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/create_an_account"
+        android:layout_width="319dp"
+        android:layout_height="53dp"
+        android:background="@drawable/round_corner_button"
+        android:backgroundTint="@color/blue"
+        android:padding="10dp"
+        android:text="Create account"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continue_with_google"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
