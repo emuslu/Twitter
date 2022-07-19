@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.text.parseAsHtml
@@ -41,6 +42,7 @@ class ProfileActivity : AppCompatActivity() {
         userJson = intent.getSerializableExtra("user")!!
         user = Json.decodeFromString<User>(userJson.toString())
 
+        var editProfileButton: Button = findViewById(R.id.tweet_edit_profile)
         var backgroundPic: ImageView = findViewById(R.id.profile_background_pic)
         var profilePic: de.hdodenhof.circleimageview.CircleImageView =
             findViewById(R.id.profile_pic)
@@ -62,6 +64,13 @@ class ProfileActivity : AppCompatActivity() {
         joindate.text = user.joinDate
         following_follower_count.text = user.following.toString() + " following " +user.followers.toString() + " followers"
 
+        editProfileButton.setOnClickListener{ view ->
+            val mFragmentManager = supportFragmentManager
+            val mFragmentTransaction = mFragmentManager.beginTransaction()
+            val mFragment = EditProfileFragment()
+            mFragmentTransaction.add(R.id.edit_profile_fragment_container, mFragment).commit()
+
+        }
     }
 
     public fun loadUser(snapshot: DocumentSnapshot): User
