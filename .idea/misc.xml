@@ -3,18 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HP-PC/AndroidStudioProjects/Twitter/app/src/main/res/layout/activity_main.xml" value="0.14629629629629629" />
-        <entry key="..\:/Users/HP-PC/AndroidStudioProjects/Twitter/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/HP-PC/AndroidStudioProjects/Twitter/app/src/main/res/layout/fragment_create_tweet.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/HP-PC/AndroidStudioProjects/Twitter/app/src/main/res/layout/fragment_edit_profile.xml" value="0.2351851851851852" />
         <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1765" />
+        <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.1645" />
         <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/drawable/ic_icons8_twitter.xml" value="0.1795" />
+        <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/drawable/round_corner_button.xml" value="0.1" />
         <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/activity_create_account.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/activity_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/activity_tweet_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/default_toolbar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/fragment_create_tweet.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/fragment_fullscreen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/header_navigation_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/main_toolbar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/muslu/AndroidStudioProjects/Twitter/app/src/main/res/layout/tweet.xml" value="0.36666666666666664" />

@@ -69,7 +69,6 @@ class ProfileActivity : AppCompatActivity() {
             val mFragmentTransaction = mFragmentManager.beginTransaction()
             val mFragment = EditProfileFragment()
             mFragmentTransaction.add(R.id.edit_profile_fragment_container, mFragment).commit()
-
         }
     }
 
