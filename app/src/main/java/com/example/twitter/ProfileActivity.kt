@@ -14,7 +14,11 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.text.parseAsHtml
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -31,14 +35,19 @@ class ProfileActivity : AppCompatActivity() {
     var image: Bitmap? = null
     lateinit var userJson:java.io.Serializable
     lateinit var user:User
+    private lateinit var tweetRecyclerview : RecyclerView
+    private lateinit var dbref : CollectionReference
+    lateinit var db: FirebaseFirestore
+    private lateinit var tweetArrayList : ArrayList<Tweet>
+    lateinit var currentUser: FirebaseUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        var db = FirebaseFirestore.getInstance()
+        db = FirebaseFirestore.getInstance()
         var auth = Firebase.auth
-        var currentUser = auth.currentUser
+        currentUser = auth.currentUser!!
         userJson = intent.getSerializableExtra("user")!!
         user = Json.decodeFromString<User>(userJson.toString())
 
@@ -69,6 +78,35 @@ class ProfileActivity : AppCompatActivity() {
             val mFragmentTransaction = mFragmentManager.beginTransaction()
             val mFragment = EditProfileFragment()
             mFragmentTransaction.add(R.id.edit_profile_fragment_container, mFragment).commit()
+        }
+        tweetRecyclerview = findViewById(R.id.profileRecyclerView)
+        tweetRecyclerview.layoutManager = LinearLayoutManager(this)
+        tweetRecyclerview.setHasFixedSize(true)
+        tweetArrayList = arrayListOf<Tweet>()
+
+        getTweetData()
+    }
+    private fun getTweetData() {
+        var tweets_of_user = arrayListOf<String>()
+        var tweets = arrayListOf<String>()
+        dbref = db.collection("users")
+        dbref.document(currentUser.uid).get().addOnSuccessListener { doc ->
+            tweets_of_user = doc.get("tweets") as ArrayList<String>
+            for ((index, tweet) in tweets_of_user.withIndex())
+            {
+                tweets.add(tweet.replace("\\s".toRegex(), ""))
+            }
+            tweetArrayList.clear()
+            var dbref2 = db.collection("tweets").get().addOnSuccessListener { result ->
+                for (document in result) {
+                    if (document.id in tweets)
+                    {
+                        val tweet = document.toObject(Tweet::class.java)
+                        tweetArrayList.add(tweet!!)
+                    }
+                }
+                tweetRecyclerview.adapter = RecyclerAdapter(tweetArrayList)
+            }
         }
     }
 
